@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/paper-annotator-frontend/static/js/main.d1ff9b2c.js",
+    "index.html": "/paper-annotator-frontend/index.html",
+    "main.d1ff9b2c.js.map": "/paper-annotator-frontend/static/js/main.d1ff9b2c.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.d1ff9b2c.js"
+  ]
+}
