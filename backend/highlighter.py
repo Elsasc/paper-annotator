@@ -8,10 +8,10 @@ from fastapi.middleware.cors import CORSMiddleware
 # import pdf editor library
 import pymupdf
 
-
+# Setup backend server
 app = FastAPI()
 
-
+# Middleware to allow backend to receive requests from frontend
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:3000"],
@@ -92,8 +92,13 @@ word_color_map = [
     # }
     ]
 
+
+# Define route for backend requests
 @app.post("/annotate/")
+
+
 async def annotate(file: UploadFile = File(...)):
+    # store input and output files in temp folder
     os.makedirs("temp", exist_ok=True)
     temp_id = str(uuid.uuid4())
     input_path = f"temp/{temp_id}.pdf"

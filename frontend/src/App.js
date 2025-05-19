@@ -6,8 +6,13 @@ import {
   Button,
   Box,
   CircularProgress,
-  TextField,
+  Card,
+  CardContent,
+  Divider,
+  Stack
 } from "@mui/material";
+import { Document, Page } from "react-pdf";
+
 
 function App() {
   const [file, setFile] = useState(null);
@@ -47,48 +52,50 @@ function App() {
   };
 
   return (
-    <Container maxWidth="sm" sx={{ textAlign: "center", mt: 8 }}>
-      <Typography variant="h4" gutterBottom>
-        Mega Meta Research Paper Annotator
-      </Typography>
+    <Container maxWidth="md" sx={{ mt: 8 }}>
+      <Card elevation={3}>
+        <CardContent>
+          <Typography variant="h4" align="center" gutterBottom>
+            Mega Meta Research Paper Annotator
+          </Typography>
+          <Divider sx={{ my: 2 }} />
 
-      <Box component="form" onSubmit={handleSubmit} sx={{ mb: 3 }}>
-        <Button
-          variant="outlined"
-          component="label"
-          fullWidth
-          sx={{ mb: 2 }}
-        >
-          {file ? file.name : "Choose PDF File"}
-          <input
-            type="file"
-            accept="application/pdf"
-            hidden
-            onChange={handleFileChange}
-          />
-        </Button>
+            <Box component="form" onSubmit={handleSubmit}>
+                <Stack direction="row" spacing={2} justifyContent="center">
+                    <Button variant="outlined" component="label">
+                        {file ? file.name : "Choose PDF File"}
+                        <input
+                            type="file"
+                            accept="application/pdf"
+                            hidden
+                            onChange={handleFileChange}
+                        />
+                    </Button>
 
-        <Button
-          variant="contained"
-          color="primary"
-          type="submit"
-          fullWidth
-          disabled={loading}
-        >
-          {loading ? <CircularProgress size={24} color="inherit" /> : "Submit"}
-        </Button>
-      </Box>
+                    <Button
+                        variant="contained"
+                        type="submit"
+                        disabled={loading}
+                    >
+                        {loading ? <CircularProgress size={24} color="inherit" /> : "Submit"}
+                    </Button>
+                </Stack>
+            </Box>
 
-      {downloadURL && (
-        <Button
-          variant="outlined"
-          color="success"
-          href={downloadURL}
-          download="annotated.pdf"
-        >
-          Download Annotated PDF
-        </Button>
-      )}
+          {downloadURL && (
+            <Box textAlign="center" mt={3}>
+              <Button
+                variant="outlined"
+                color="success"
+                href={downloadURL}
+                download="annotated.pdf"
+              >
+                Download Annotated PDF
+              </Button>
+            </Box>
+          )}
+        </CardContent>
+      </Card>
     </Container>
   );
 }
