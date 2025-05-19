@@ -11,7 +11,6 @@ import {
   Divider,
   Stack
 } from "@mui/material";
-import { Document, Page } from "react-pdf";
 
 
 function App() {
@@ -36,7 +35,7 @@ function App() {
     formData.append("file", file);
 
     try {
-      const res = await axios.post("https://paper-annotator.onrender.com", formData, {
+      const res = await axios.post("https://paper-annotator.onrender.com/annotate", formData, {
         responseType: "blob",
       });
 
