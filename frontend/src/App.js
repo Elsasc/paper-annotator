@@ -36,7 +36,7 @@ function App() {
     formData.append("file", file);
 
     try {
-      const res = await axios.post("http://localhost:8000/annotate/", formData, {
+      const res = await axios.post("https://paper-annotator.onrender.com", formData, {
         responseType: "blob",
       });
 
