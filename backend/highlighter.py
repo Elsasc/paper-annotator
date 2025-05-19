@@ -20,6 +20,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Root route
+@app.get("/")
+def root():
+    return {"status": "Backend is live"}
+
+
 
 def highlight_words_in_pdf(input_pdf, output_pdf, word_color_map):
     doc = pymupdf.open(input_pdf)
