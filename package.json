@@ -44,6 +44,7 @@
   },
   "devDependencies": {
     "@types/pdfjs-dist": "^2.10.378",
-    "gh-pages": "^6.3.0"
+    "gh-pages": "^6.3.0",
+    "homepage": "https://psychuwresearchteam.github.io/paper-annotator/"
   }
 }
