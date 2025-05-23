@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/paper-annotator/static/js/main.52152cfa.js",
+    "index.html": "/paper-annotator/index.html",
+    "main.52152cfa.js.map": "/paper-annotator/static/js/main.52152cfa.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.52152cfa.js"
+  ]
+}
